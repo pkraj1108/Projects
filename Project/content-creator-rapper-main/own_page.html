@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satyam</title>
+    <!-- Tailwind CSS -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@200&display=swap');
+
+        .navbar {
+            background: rgb(238, 234, 234);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 0;
+            cursor: pointer;
+            position: sticky;
+            height: 65px;
+            line-height: 65px;
+            z-index: 999;
+        }
+
+        .nav-bar {
+            position: relative;
+            max-width: 1250px;
+            padding: 0 30px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-bar .items {
+            display: inline-flex;
+        }
+
+        .bottom-nav {
+            display: none;
+        }
+
+        .items li {
+            list-style: none;
+            font-family: 'Encode Sans SC', sans-serif;
+            padding-left: 10px;
+        }
+
+        .items li a {
+            color: #242526;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 9px 50px;
+            transition: all 0.3s ease;
+        }
+
+        .items li a.active{
+            background: black;
+            color: white;
+        }
+
+        .items li a:hover {
+            background: rgb(0, 0, 0);
+            color: white;
+            transition: ease-in-out;
+            transition-duration: 0.5s;
+        }
+
+        .form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 80px;
+            padding-left: 50px;
+            margin-bottom: 100%;
+        }
+
+        #search {
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            border-radius: 5px 0 0 5px;
+            background-color: #cecaca;
+            width: 22%;
+        }
+
+        #submit {
+            font-size: 18px;
+            padding: 10px;
+            border-radius: 0px 5px 5px 0px;
+            border: none;
+            background-color: #151313;
+            color: white;
+            cursor: pointer;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        .sign-up {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 180px 20px 0;
+            text-align: center;
+        }
+
+        .bar {
+            font-family: 'Encode Sans SC', sans-serif;
+        }
+
+        .nav {
+            text-align: center;
+        }
+
+        .alert{
+            background: rgb(25, 240, 25);
+            color: white;
+            padding: 20px 40px;
+            min-width: 420px;
+            position: absolute;
+            right: 35%;
+            top: 71%;
+            overflow: hidden;
+            border-radius: 4px;
+            border-left: 8px solid green;
+        }
+
+        .alert.show{
+            animation: show_slide 1s ease forwards;
+        }
+        @keyframes show_slide {
+            0%{
+                transform: translateX(100%);
+            }
+            40%{
+                transform: translateX(-10%);
+            }
+            80%{
+                transform: translateX(0%);
+            }
+            100%{
+                transform: translateX(-10px);
+            }
+        }
+
+        .alert.hide{
+            display: none;
+        }
+        
+        .alert .fa-thumbs-up{
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: green;
+            font-size: 30px;
+        }
+
+        .alert .msg{
+            padding: 0 20px;
+            font-size: 18px;
+            color: green;
+        }
+
+        .alert .close-btn{
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgb(22, 187, 22);
+            padding: 21px 18px;
+            cursor: pointer;
+        }
+
+        .close-btn:hover{
+            background: rgb(2, 104, 2);
+        }
+
+        .close-btn .fa-times{
+            color: green;
+            font-size: 22px;
+            line-height: 40px;
+        }
+
+        @media only screen and (max-width:980px) {
+            .form {
+                padding-left: 12px;
+                margin-bottom: 100%;
+            }
+
+            #search {
+                width: 60%;
+            }
+
+            #submit {
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+
+            .navbar{
+                display: none;
+            }
+
+            .bottom-nav{
+                display: block;
+            }
+
+            .alert{
+                right: 0;
+                top: 70%;  
+                left: 2px;
+            }
+
+            .alert .fa-thumbs-up{
+                left: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            .alert .msg{
+            padding: 0 15px;
+            font-size: 18px;
+            text-align: left;
+            color: green;
+        }
+        }
+    </style>
+
+</head>
+
+<body class=" bg-yellow-50 bg-opacity-50">
+    <nav class="navbar">
+        <div class="nav-bar">
+            <ul class="items">
+                <li><a href="index.html"><i class="fas fa-lightbulb" aria-hidden="true"></i> Home</a></li>
+                <li><a href="my_links.html"><i class="fas fa-link" aria-hidden="true"></i> My Links</a></li>
+                <li><a href="latest_content.html"><i class="fas fa-mug-hot" aria-hidden="true"></i> Latest content</a></li>
+                <li><a href="own_page.html" class="active"><i class="fas fa-cog" aria-hidden="true"></i> Get My Own Page</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="bg-gradient-to-b from-gray-800 text-gray-600 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
+                <a class="mr-5 hover:text-gray-900"></a>
+                <a class="mr-5 hover:text-gray-900"></a>
+                <a class="mr-5 hover:text-gray-900"></a>
+                <a class="hover:text-gray-900"></a>
+            </nav>
+            <a
+                class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0 align-bottom">
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg> -->
+                <!-- <span>Creator.ai</span> -->
+            </a>
+            <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
+                <!-- <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Subscribe
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </button> -->
+            </div>
+        </div>
+    </header>
+    <section class="flex justify-center">
+        <h1 class="title-font sm:text-4xl text-3xl mb-3 font-medium text-gray-900 font-bold">Creator.ai</h1>
+    </section>
+
+    <!-- Email-ID-Subscriber -->
+    <p class="sign-up">Sign-up here, and we will send you the link for your own page! </p>
+    <form name="sign-up" class="form" method="post" autocomplete="off">
+        <input type="text" name="email" id="search" placeholder="Enter your email" required>
+        <button button type="submit" name="submit" id="submit" value="Send message">Sign-up</button>
+    </form>
+    <div class="alert hide">
+        <span class="fas fa-thumbs-up"></span>
+        <span class="msg">Thank You. We will it your mail...</span>
+        <span class="close-btn">
+            <span class="fas fa-times"></span>
+        </span>
+    </div>
+    <footer class="bottom-nav sticky inset-x-0 bottom-0  text-gray-600 body-font">
+        <!-- sticky top-0 mx-auto flex border-2 border-black-500 rounded mb-3 mt-6 -->
+        <div class="rounded-lg max-w-lg mx-auto flex border-2 border-black-500 rounded mb-3 mt-6">
+
+
+            <div
+                class="group rounded-lg transition duration-700 hover:bg-yellow-100 transform hover:-translate-y-1 hover:scale-110 ease-in-out flex justify-center flex-col flex-grow py-1 px-4 focus:ring-2 focus:outline-none focus:ring-black focus:ring-opacity-50 ">
+                <a href="index.html" style="color:black; margin-left: auto;
+                margin-right: auto;" class="nav mx-auto fas fa-lightbulb ">
+                    <p class="bar mx-auto">Home</p>
+                </a>
+
+                <!-- <span class="mx-auto">Home</span> -->
+            </div>
+
+
+            <div
+                class="group rounded-lg transition duration-700 hover:bg-yellow-100 transform hover:-translate-y-1 hover:scale-110 ease-in-out flex justify-center flex-col  flex-grow py-1 px-4 focus:ring-2 focus:ring-black focus:ring-opacity-50 ">
+                <a href="my_links.html" style="color:black; margin-left: auto;
+                margin-right: auto;" class="nav fas fa-link mx-auto">
+                    <p class="bar mx-auto">My Links</p>
+                </a>
+
+                <!-- <span class="mx-auto" >My Links</span> -->
+            </div>
+
+            <div
+                class="group rounded-lg transition duration-700 hover:bg-yellow-100 transform hover:-translate-y-1 hover:scale-110 ease-in-out flex justify-center flex-col  flex-grow py-1 px-4 focus:ring-2 focus:ring-black focus:ring-opacity-50 ">
+                <a href="latest_content.html" style="color:black; margin-left: auto;margin-right: auto;"
+                    class="nav fas fa-mug-hot mx-auto">
+                    <p class="bar mx-auto">Latest Content</p>
+                </a>
+
+                <!-- <span class="mx-auto" >Latest Content</span> -->
+            </div>
+
+            <div
+                class="group rounded-lg transition duration-700 ease-in-out hover:bg-gray-500 transform hover:-translate-y-1 hover:scale-110 ease-in-out flex justify-center flex-col flex-grow py-1 px-4 bg-black text-white focus:ring-2 focus:ring-black focus:ring-opacity-50 ">
+                <a href="#" style="color:white; margin-left: auto;
+                margin-right: auto;" class="nav bg-black fas fa-cog group-hover:bg-gray-500">
+                    <p class="bar mx-auto">Get My Own Page</p>
+                </a>
+
+                <!-- <span class="mx-auto">Get My Own </span><span class="mx-auto">page</span> -->
+            </div>
+        </div>
+    </footer>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxQxZQtH6beWSiREkOgecLc4IdWlZblHutK_k_rpZc2-d56tFxjH1Ji0XDbzH1N-fuR/exec'
+        const form = document.forms['sign-up']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                // .then(response => alert("Thank You for joinning us. We will send your Id to your mail..."))
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $('button').click(function(){
+            $('.alert').removeClass("hide");
+            $('.alert').addClass("show");
+            setTimeout(function(){
+            $('.alert').addClass("hide");
+            $('.alert').removeClass("show");
+            },4000);
+        });
+        $('.close-btn').click(function(){
+            $('.alert').addClass("hide");
+            $('.alert').removeClass("show");
+        });
+    </script>
+
+</body>
+
+</html>

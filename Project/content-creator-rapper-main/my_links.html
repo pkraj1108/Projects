@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satyam</title>
+    <!-- Tailwind CSS -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@200&display=swap');
+
+        .navbar {
+            background: rgb(238, 234, 234);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 0;
+            cursor: pointer;
+            position: sticky;
+            height: 65px;
+            line-height: 65px;
+            z-index: 999;
+        }
+
+        .nav-bar {
+            position: relative;
+            max-width: 1250px;
+            padding: 0 30px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-bar .items {
+            display: inline-flex;
+        }
+
+        .bottom-nav {
+            display: none;
+        }
+
+        .items li {
+            list-style: none;
+            font-family: 'Encode Sans SC', sans-serif;
+            padding-left: 10px;
+        }
+
+        .items li a {
+            color: #242526;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 9px 50px;
+            transition: all 0.3s ease;
+        }
+
+        .items li a.active{
+            background: black;
+            color: white;
+        }
+
+        .items li a:hover {
+            background: rgb(0, 0, 0);
+            color: white;
+            transition: ease-in-out;
+            transition-duration: 0.5s;
+        }
+
+        .linkss {
+            max-width: 70%;
+            margin: 80px auto;
+        }
+
+        .bar {
+            font-family: 'Encode Sans SC', sans-serif;
+        }
+
+        .nav {
+            text-align: center;
+        }
+
+        @media only screen and (max-width:980px) {
+            .linkss {
+                max-width: 80%;
+                margin: 50px auto;
+            }
+
+            .hello {
+                width: 100%;
+            }
+
+            .links {
+                text-align: center;
+            }
+            .navbar{
+                display: none;
+            }
+
+            .bottom-nav{
+                display: block;
+            }
+        }
+    </style>
+
+</head>
+
+<body class=" bg-yellow-50 bg-opacity-50">
+    <nav class="navbar">
+        <div class="nav-bar">
+            <ul class="items">
+                <li><a href="index.html"><i class="fas fa-lightbulb" aria-hidden="true"></i> Home</a></li>
+                <li><a href="my_links.html" class="active" ><i class="fas fa-link" aria-hidden="true"></i> My Links</a></li>
+                <li><a href="latest_content.html"><i class="fas fa-mug-hot" aria-hidden="true"></i> Latest content</a></li>
+                <li><a href="own_page.html"><i class="fas fa-cog" aria-hidden="true"></i> Get My Own Page</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="bg-gradient-to-b from-gray-800 text-gray-600 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
+                <a class="mr-5 hover:text-gray-900"></a>
+                <a class="mr-5 hover:text-gray-900"></a>
+                <a class="mr-5 hover:text-gray-900"></a>
+                <a class="hover:text-gray-900"></a>
+            </nav>
+            <a
+                class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0 align-bottom">
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg> -->
+                <!-- <span>Creator.ai</span> -->
+            </a>
+            <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
+                <!-- <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Subscribe
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </button> -->
+            </div>
+        </div>
+    </header>
+    <section class="flex justify-center">
+        <h1 class="title-font sm:text-4xl text-3xl mb-3 font-medium text-gray-900 font-bold">Creator.ai</h1>
+    </section>
+    <div
+        class="linkss rounded-lg grid grid-cols-1 flex border-black-500 rounded mb-3 mt-20 flex w-full justify-center items-centre mb-6">
+        <div
+            class="hello group rounded mb-5 md:w-full flex align-center justify-center transition duration-500 ease-in-out hover:bg-gray-500 transform hover:-translate-y-1 hover:scale-100 ease-in-out flex justify-center py-2 px-4 bg-black text-white focus:ring-2 focus:ring-black focus:ring-opacity-50">
+            <a href="https://youtube.com/playlist?list=PLo7Zq0qYVD9zmJBqmHJDlREEZaXcyfnMf" target="_blank" style="color:rgb(248, 244, 244); margin-left: auto;
+            margin-right: auto;" class="bg-black transition duration-500 group-hover:bg-gray-500 mx-auto">
+                <p class="links m-4 mx-auto text-xl">Podcast | A Musical Journal</p>
+            </a>
+        </div>
+        <div
+            class="hello group rounded mb-5 md:w-full flex align-center justify-center transition duration-500 ease-in-out hover:bg-gray-500 transform hover:-translate-y-1 hover:scale-100 ease-in-out flex justify-center flex-col flex-grow py-2 px-4 bg-black text-white focus:ring-2 focus:ring-black focus:ring-opacity-50">
+            <a href="https://open.spotify.com/track/2eN1zpYNF4aWPoBR7RatT0?si=MzhUfFqaSbSpXlZNnLv0Vw&utm_source=copy-link"
+                target="_blank" style="color:rgb(253, 252, 252); margin-left: auto;
+            margin-right: auto;" class="bg-black transition duration-500 group-hover:bg-gray-500 mx-auto">
+                <p class="m-4 mx-auto text-xl">Spotify</p>
+            </a>
+        </div>
+        <div
+            class="hello group rounded mb-5 md:w-full flex align-center justify-center transition duration-500 ease-in-out hover:bg-gray-500 transform hover:-translate-y-1 hover:scale-100 ease-in-out flex justify-center flex-col flex-grow py-2 px-4 bg-black text-white focus:ring-2 focus:ring-black focus:ring-opacity-50">
+            <a href="https://music.apple.com/in/album/gang-gang/1565017710?i=1565017712&ls" target="_blank" style="color:rgb(250, 246, 246); margin-left: auto;
+            margin-right: auto;" class="bg-black transition duration-500 group-hover:bg-gray-500 mx-auto">
+                <p class="m-4 mx-auto text-xl">Apple Music</p>
+            </a>
+        </div>
+        <div
+            class="hello group rounded mb-5 md:w-full flex align-center justify-center transition duration-500 ease-in-out hover:bg-gray-500 transform hover:-translate-y-1 hover:scale-100 ease-in-out flex justify-center flex-col flex-grow py-2 px-4 bg-black text-white focus:ring-2 focus:ring-black focus:ring-opacity-50">
+            <a href="https://www.youtube.com/channel/UCSPdHDNYlPNU42XoJ_RrVoQ" target="_blank" style="color:rgb(253, 251, 251); margin-left: auto;
+            margin-right: auto;" class="bg-black transition duration-500 group-hover:bg-gray-500 mx-auto">
+                <p class="m-4 mx-auto text-xl">Youtube</p>
+            </a>
+        </div>
+        <div
+            class="hello group rounded mb-5 md:w-full flex align-center justify-center transition duration-500 ease-in-out hover:bg-gray-500 transform hover:-translate-y-1 hover:scale-100 ease-in-out flex justify-center flex-col flex-grow py-2 px-4 bg-black text-white focus:ring-2 focus:ring-black focus:ring-opacity-50">
+            <a href="https://www.instagram.com/thesatyum/" target="_blank" style="color:rgb(248, 241, 241); margin-left: auto;
+            margin-right: auto;" class="bg-black transition duration-500 group-hover:bg-gray-500 mx-auto">
+                <p class="m-4 mx-auto text-xl">Instagram</p>
+            </a>
+        </div>
+        <div
+            class="hello group rounded mb-5 md:w-full flex align-center justify-center transition duration-500 ease-in-out hover:bg-gray-500 transform hover:-translate-y-1 hover:scale-100 ease-in-out flex justify-center flex-col flex-grow py-2 px-4 bg-black text-white focus:ring-2 focus:ring-black focus:ring-opacity-50">
+            <a href="https://www.jiosaavn.com/album/gunah/b2mMcq4jzMk_" target="_blank" style="color:rgb(247, 241, 241); margin-left: auto;
+            margin-right: auto;" class="bg-black transition duration-500 group-hover:bg-gray-500 mx-auto">
+                <p class="m-4 mx-auto text-xl">JioSaavn</p>
+            </a>
+        </div>
+        <div
+            class="hello group rounded mb-5 md:w-full flex align-center justify-center transition duration-500 ease-in-out hover:bg-gray-500 transform hover:-translate-y-1 hover:scale-100 ease-in-out flex justify-center flex-col flex-grow py-2 px-4 bg-black text-white focus:ring-2 focus:ring-black focus:ring-opacity-50">
+            <a href="https://music.amazon.in/albums/B086MJBY9N?trackAsin=B086MMN6HT&ref=dm_sh_bf68-a91e-dmcp-bf5a-bb609&musicTerritory=IN&marketplaceId=A21TJRUUN4KGV"
+                target="_blank" style="color:rgb(253, 249, 249); margin-left: auto;
+            margin-right: auto;" class="bg-black transition duration-500 group-hover:bg-gray-500 mx-auto">
+                <p class="m-4 mx-auto text-xl">Amazon Music</p>
+            </a>
+        </div>
+
+    </div>
+    <!-- "mt-20 flex w-full justify-center items-end mb-6 -->
+    <footer class="bottom-nav text-gray-600 body-font sticky bottom-0 inset-x-0">
+        <!-- sticky top-0 mx-auto flex border-2 border-black-500 rounded mb-3 mt-6 -->
+        <div
+            class=" cursor-pointer rounded-lg max-w-lg mx-auto flex border-2 border-black-500 rounded mb-3 mt-6 bg-gray-200">
+
+            <div
+                class="group rounded-lg transition duration-700 hover:bg-yellow-100 transform hover:-translate-y-1 hover:scale-110 ease-in-out flex justify-center flex-col  flex-grow py-1 px-4 focus:ring-2 focus:ring-black focus:ring-opacity-50 ">
+                <a href="index.html" style="color:black; margin-left: auto;margin-right: auto;"
+                    class="nav fas fa-lightbulb mx-auto">
+                    <p class="bar mx-auto">Home</p>
+                </a>
+
+                <!-- <span class="mx-auto">Home</span> -->
+            </div>
+
+            <div
+                class="group rounded-lg transition duration-700 ease-in-out hover:bg-gray-500 transform hover:-translate-y-1 hover:scale-110 ease-in-out flex justify-center flex-col flex-grow py-1 px-4 bg-black text-white focus:ring-2 focus:ring-black focus:ring-opacity-50 ">
+                <a href="#" style="color:white; margin-left: auto;
+                margin-right: auto;" class="nav bg-black fas fa-link group-hover:bg-gray-500">
+                    <p class="bar mx-auto">My Links</p>
+                </a>
+
+                <!-- <span class="mx-auto">My Links</span> -->
+            </div>
+
+            <div
+                class="group rounded-lg transition duration-700 hover:bg-yellow-100 transform hover:-translate-y-1 hover:scale-110 ease-in-out flex justify-center flex-col  flex-grow py-1 px-4 focus:ring-2 focus:ring-black focus:ring-opacity-50 ">
+                <a href="latest_content.html" style="color:black; margin-left: auto;margin-right: auto;"
+                    class="nav fas fa-mug-hot mx-auto">
+                    <p class="bar mx-auto">Latest Content</p>
+                </a>
+
+                <!-- <span class="mx-auto">Latest Content</span> -->
+            </div>
+
+            <div
+                class="group rounded-lg transition duration-700 hover:bg-yellow-100 transform hover:-translate-y-1 hover:scale-110 ease-in-out flex justify-center flex-col flex-grow py-1 px-4 focus:ring-2 focus:outline-none focus:ring-black focus:ring-opacity-50 ">
+                <a href="own_page.html" style="color:black; margin-left: auto;
+                margin-right: auto;" class="nav mx-auto fas fa-cog ">
+                    <p class="bar mx-auto">Get My Own Page</p>
+                </a>
+
+                <!-- <span class="mx-auto">Get My Own page</span> -->
+            </div>
+
+        </div>
+    </footer>
+</body>
+
+</html>
